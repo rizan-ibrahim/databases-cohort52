@@ -14,9 +14,9 @@ use meetup;
 /* create invite table */
 
 create table invitee(
-invite_no int auto_increment primary key,
-invite_name varchar(100),
-invite_by varchar(100)
+invitee_no int auto_increment primary key,
+invitee_name varchar(100),
+invitee_by varchar(100)
 );
 
 /* create room table */
@@ -24,7 +24,7 @@ invite_by varchar(100)
 create table room (
 room_no int auto_increment primary key,
 room_name varchar (100),
-floor_no int
+floor_no TINYINT UNSIGNED,
 );
 
 /* create meeting table */
