@@ -11,7 +11,7 @@ connection.connect((err) => {
 
   const queries = [
     "select name from country where Population > 8000000",
-    'select name from country where name like " %land) % "',
+    "SELECT name FROM country WHERE name LIKE '%land%'",
     "select name from city where population between 500000 and 1000000",
     "SeLect Name FROM country WHERE Continent = 'Europe'",
     "SELECT Name, SurfaceArea FROM country ORDER BY SurfaceArea DESC",
