@@ -8,28 +8,21 @@ const connection = await mysql.createConnection({
 });
 console.log(" Connected to database: database_assingnment");
 
-//
-const authorMentorRows = await connection.execute(`
-  select a.author_name AS author, m.author_name AS mentor
-  from authors a
-  left join authors m ON a.mentor = m.author_id
+const [paperAuthors] = await connection.execute(`
+  select 
+    rp.paper_id,
+    rp.paper_title,
+    count(ap.author_id) as number_of_authors
+  from research_Papers rp
+  join author_paper ap on rp.paper_id = ap.paper_id
+  group by rp.paper_id, rp.paper_title
 `);
-console.log("Author and their mentors:");
-console.table(authorMentorRows);
-
-//
-const [authorPapersRows] = await connection.execute(`
-  select a.author_name, r.paper_title
-  from authors a
-  left join author_paper ap ON a.author_id = ap.author_id
-  left join research_papers r ON ap.paper_id = r.paper_id
-`);
-console.log("Authors and their research papers:");
-console.table(authorPapersRows);
+console.log("all research papers and number of authors that wrote them");
+console.table(paperAuthors);
 
 //
 const [femalePaperCount] = await connection.execute(`
-  select count(*) as total_female_papers
+  select count(distinct ap.paper_id) as total_unique_female_papers
   from author_paper ap
   join authors a ON ap.author_id = a.author_id
   where a.gender = 'female'
@@ -48,7 +41,7 @@ console.table(avgHIndexPerUni);
 
 //
 const [totalPapersPerUni] = await connection.execute(`
-  select a.university, count(ap.paper_id) as total_papers
+  select a.university, count(distinct ap.paper_id) as total_unique_papers
   from authors a
   join author_paper ap ON a.author_id = ap.author_id
   group by a.university

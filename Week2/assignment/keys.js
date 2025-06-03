@@ -28,21 +28,6 @@ await connection.execute(`
 
 console.log('Table "authors" created with mentor as foreign key');
 
-await connection.execute(`
-  create table research_Papers (
-    paper_id int auto_increment primary key,
-    paper_title varchar (100), 
-    conference varchar (100), 
-    publish_date date,
-    author_id INT,
-    foreign key (author_id) references authors(author_id) on delete CASCADE
-    );
-   
-  
-  `);
-
-console.log('Table "research_Papers" created');
-
 //
 await connection.execute(`
   insert into authors (author_name, university, date_of_birth, h_index, gender)
