@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Mountain Retreat",
+    "elements": ["mountain", "lake", "trees"]
+  },
+  {
+    "title": "Winter Harmony",
+    "elements": ["snow", "cabin", "pine trees"]
+  },
+  {
+    "title": "Seaside Sunset",
+    "elements": ["ocean", "sunset", "beach"]
+  }
+]
