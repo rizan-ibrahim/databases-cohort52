@@ -1,0 +1,61 @@
+{
+  "recipes": [
+    {
+      "_id": { "$oid": "1234567890abcdef12345678" },
+      "recipe_name": "Pasta Carbonara",
+      "category_ids": [{ "$oid": "4564567890abcdef12345678" }],
+      "ingredient_ids": [
+        { "$oid": "7897897890abcdef12345678" },
+        { "$oid": "7907907900abcdef12345678" },
+        { "$oid": "7917917910abcdef12345678" }
+      ],
+      "step_ids": [
+        { "$oid": "9019019010abcdef12345678" },
+        { "$oid": "9029029020abcdef12345678" },
+        { "$oid": "9039039030abcdef12345678" },
+        { "$oid": "9049049040abcdef12345678" }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "_id": { "$oid": "4564567890abcdef12345678" },
+      "name": "Main"
+    }
+  ],
+  "ingredients": [
+    {
+      "_id": { "$oid": "7897897890abcdef12345678" },
+      "name": "Pasta",
+      "amount": "200g"
+    },
+    {
+      "_id": { "$oid": "7907907900abcdef12345678" },
+      "name": "Bacon",
+      "amount": "100g"
+    },
+    {
+      "_id": { "$oid": "7917917910abcdef12345678" },
+      "name": "Eggs",
+      "amount": "2"
+    }
+  ],
+  "steps": [
+    {
+      "_id": { "$oid": "9019019010abcdef12345678" },
+      "description": "Boil the pasta"
+    },
+    {
+      "_id": { "$oid": "9029029020abcdef12345678" },
+      "description": "Fry the bacon"
+    },
+    {
+      "_id": { "$oid": "9039039030abcdef12345678" },
+      "description": "Mix eggs with cheese"
+    },
+    {
+      "_id": { "$oid": "9049049040abcdef12345678" },
+      "description": "Combine everything"
+    }
+  ]
+}

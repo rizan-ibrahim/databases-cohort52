@@ -1,0 +1,16 @@
+{
+  "_id": { "$oid": "1234567890abcdef12345678" },
+  "recipe_name": "Pasta Carbonara",
+  "category": "Main",
+  "steps": [
+    "Boil the pasta",
+    "Fry the bacon",
+    "Mix eggs with cheese",
+    "Combine everything"
+  ],
+  "ingredients": [
+    { "name": "Pasta", "amount": "200g" },
+    { "name": "Bacon", "amount": "100g" },
+    { "name": "Eggs", "amount": "2" }
+  ]
+}
