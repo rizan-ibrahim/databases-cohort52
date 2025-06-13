@@ -1,3 +1,10 @@
+//3.3.1
+
+//name = '' OR '1'='1' , code = '' OR '1'='1'
+// this will make the query be like
+// SELECT Population FROM ${Country} WHERE Name = '' OR '1'='1' AND code = '' OR '1'='1'
+
+// 3.3.2
 function getPopulation(conn, table, name, code, cb) {
   // assuming that connection to the database is established and stored as conn
 
